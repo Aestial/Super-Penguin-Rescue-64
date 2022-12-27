@@ -1,0 +1,136 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://fonts/Super-Mario-64-DS.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://art/snow/snow_material.tres" type="Material" id=2]
+[ext_resource path="res://art/snow/snow_terrain.png" type="Texture" id=3]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scripts/Main.gd" type="Script" id=5]
+[ext_resource path="res://Penguin.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scripts/LifesLabel.gd" type="Script" id=7]
+[ext_resource path="res://scripts/ScoreLabel.gd" type="Script" id=8]
+
+[sub_resource type="BoxShape" id=5]
+extents = Vector3( 50, 0.05, 25 )
+
+[sub_resource type="PlaneMesh" id=2]
+size = Vector2( 100, 50 )
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_texture = ExtResource( 3 )
+emission_enabled = true
+emission = Color( 0.239216, 0.239216, 0.239216, 1 )
+emission_energy = 1.0
+emission_operator = 0
+emission_on_uv2 = false
+uv1_scale = Vector3( 8, 8, 1 )
+
+[sub_resource type="BoxShape" id=8]
+extents = Vector3( 12, 1, 2 )
+
+[sub_resource type="QuadMesh" id=4]
+material = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=7]
+outline_size = 1
+outline_color = Color( 0.0784314, 0.0784314, 0.0784314, 1 )
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="Theme" id=6]
+default_font = SubResource( 7 )
+
+[node name="Main" type="Node"]
+script = ExtResource( 5 )
+friend_scene = ExtResource( 6 )
+
+[node name="Ground" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -12 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Ground"]
+shape = SubResource( 5 )
+
+[node name="Plane" type="MeshInstance" parent="Ground"]
+mesh = SubResource( 2 )
+skeleton = NodePath("")
+material/0 = SubResource( 3 )
+
+[node name="PenguinDetector" type="Area" parent="Ground"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 12 )
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+
+[node name="CollisionShape" type="CollisionShape" parent="Ground/PenguinDetector"]
+shape = SubResource( 8 )
+
+[node name="Snow" type="CPUParticles" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25, -4 )
+amount = 64
+lifetime = 6.0
+preprocess = 4.0
+draw_order = 2
+mesh = SubResource( 4 )
+emission_shape = 2
+emission_box_extents = Vector3( 8, 2, 8 )
+gravity = Vector3( 0, -1.25, 0 )
+angle = 90.0
+angle_random = 1.0
+scale_amount = 0.2
+scale_amount_random = 0.05
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.965926, -0.258819, 0, 0.258819, 0.965926, 0, 4.25, 7 )
+
+[node name="Player" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -3 )
+
+[node name="SpawnLocation" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15, 0 )
+
+[node name="SpawnTimer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[node name="UserInterface" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = SubResource( 6 )
+
+[node name="LifesLabel" type="Label" parent="UserInterface"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -36.0
+margin_right = 320.0
+text = "Lifes: 3"
+align = 1
+script = ExtResource( 7 )
+
+[node name="ScoreLabel" type="Label" parent="UserInterface"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 320.0
+margin_top = -36.0
+margin_right = 640.0
+text = "Score: 0"
+align = 1
+script = ExtResource( 8 )
+
+[node name="Retry" type="ColorRect" parent="UserInterface"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.227451, 0.227451, 0.227451, 0.443137 )
+
+[node name="Label" type="Label" parent="UserInterface/Retry"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -105.0
+margin_top = -13.0
+margin_right = 105.0
+margin_bottom = 13.0
+text = "Press Enter to Retry"
+
+[connection signal="body_entered" from="Ground/PenguinDetector" to="." method="_on_PenguinDetector_body_entered"]
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_SpawnTimer_timeout"]
+[connection signal="game_over" from="UserInterface/LifesLabel" to="." method="_on_LifesLabel_game_over"]
