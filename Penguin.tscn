@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scripts/Penguin.gd" type="Script" id=1]
 [ext_resource path="res://art/penguin/PenguinCharacter.tscn" type="PackedScene" id=2]
+[ext_resource path="res://sounds/sm64_penguin_baby.wav" type="AudioStream" id=5]
 
 [sub_resource type="PhysicsMaterial" id=2]
 friction = 0.3
@@ -16,6 +17,7 @@ collision_layer = 2
 collision_mask = 7
 physics_material_override = SubResource( 2 )
 script = ExtResource( 1 )
+die_sound = ExtResource( 5 )
 
 [node name="Pivot" type="Spatial" parent="."]
 
@@ -29,5 +31,10 @@ shape = SubResource( 3 )
 [node name="VisibilityNotifier" type="VisibilityNotifier" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.840936, 0 )
 aabb = AABB( -0.655, -0.837, -0.75, 1.309, 1.5, 1.4 )
+
+[node name="DieAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+
+[node name="QueueFreeTimer" type="Timer" parent="."]
 
 [connection signal="screen_exited" from="VisibilityNotifier" to="." method="_on_VisibilityNotifier_screen_exited"]

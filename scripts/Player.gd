@@ -4,13 +4,17 @@ extends KinematicBody
 export var cooldown = 0.125
 # Separation in meters of side lanes from central
 export var lane_distance = 4.5
+# Catch sound
+export(AudioStream) var catch_sound
+
 # Current lane
 var lane = 0
 # Control flags
 var can_catch = true
 var can_move = true
 
-func _ready():
+
+func _ready():	
 	$CooldownTimer.wait_time = cooldown
 
 func _process(_delta):
@@ -39,4 +43,5 @@ func _on_CooldownTimer_timeout():
 
 func _on_PenguinDetector_body_entered(body):
 	if body.is_in_group("friend") and can_catch:
+		$CatchAudioStreamPlayer.play()
 		body.catch()

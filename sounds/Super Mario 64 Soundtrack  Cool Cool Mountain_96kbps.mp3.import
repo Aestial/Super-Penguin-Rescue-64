@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Super Mario 64 Soundtrack  Cool Cool Mountain_96kbps.mp3-81657329466d99ddac7e9a3c3ccc194f.mp3str"
+
+[deps]
+
+source_file="res://sounds/Super Mario 64 Soundtrack  Cool Cool Mountain_96kbps.mp3"
+dest_files=[ "res://.import/Super Mario 64 Soundtrack  Cool Cool Mountain_96kbps.mp3-81657329466d99ddac7e9a3c3ccc194f.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

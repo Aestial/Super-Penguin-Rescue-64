@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://fonts/Super-Mario-64-DS.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://art/snow/snow_material.tres" type="Material" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Penguin.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scripts/LifesLabel.gd" type="Script" id=7]
 [ext_resource path="res://scripts/ScoreLabel.gd" type="Script" id=8]
+[ext_resource path="res://sounds/Super Mario 64 Soundtrack  Cool Cool Mountain_96kbps.mp3" type="AudioStream" id=9]
 
 [sub_resource type="BoxShape" id=5]
 extents = Vector3( 50, 0.05, 25 )
@@ -130,6 +131,10 @@ margin_top = -13.0
 margin_right = 105.0
 margin_bottom = 13.0
 text = "Press Enter to Retry"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+autoplay = true
 
 [connection signal="body_entered" from="Ground/PenguinDetector" to="." method="_on_PenguinDetector_body_entered"]
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_SpawnTimer_timeout"]

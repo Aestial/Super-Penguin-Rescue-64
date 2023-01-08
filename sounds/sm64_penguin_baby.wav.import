@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/sm64_penguin_baby.wav-310f38dfa55a6b14ba16a5f6589d5764.sample"
+
+[deps]
+
+source_file="res://sounds/sm64_penguin_baby.wav"
+dest_files=[ "res://.import/sm64_penguin_baby.wav-310f38dfa55a6b14ba16a5f6589d5764.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
