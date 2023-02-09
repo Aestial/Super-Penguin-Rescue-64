@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://art/penguin/blue_material.tres" type="Material" id=1]
-[ext_resource path="res://art/penguin/penguin.glb" type="PackedScene" id=2]
-[ext_resource path="res://art/penguin/cream_material.tres" type="Material" id=3]
-[ext_resource path="res://art/penguin/penguin_material.tres" type="Material" id=4]
-[ext_resource path="res://art/penguin/yellow_material.tres" type="Material" id=5]
+[ext_resource path="res://components/penguin/blue_material.tres" type="Material" id=1]
+[ext_resource path="res://components/penguin/penguin.glb" type="PackedScene" id=2]
+[ext_resource path="res://components/penguin/cream_material.tres" type="Material" id=3]
+[ext_resource path="res://components/penguin/penguin_material.tres" type="Material" id=4]
+[ext_resource path="res://components/penguin/yellow_material.tres" type="Material" id=5]
 
 [node name="PenguinCharacter" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.966756, 4.12041 )

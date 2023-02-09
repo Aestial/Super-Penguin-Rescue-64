@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/circle-8.png-f1f7ec2e991a5a57a6385f8aa7ec127b.s3tc.stex"
-path.etc="res://.import/circle-8.png-f1f7ec2e991a5a57a6385f8aa7ec127b.etc.stex"
+path.s3tc="res://.import/circle-8.png-6cc112cff598fddf4be3167b53943ada.s3tc.stex"
+path.etc="res://.import/circle-8.png-6cc112cff598fddf4be3167b53943ada.etc.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://art/snow/circle-8.png"
-dest_files=[ "res://.import/circle-8.png-f1f7ec2e991a5a57a6385f8aa7ec127b.s3tc.stex", "res://.import/circle-8.png-f1f7ec2e991a5a57a6385f8aa7ec127b.etc.stex" ]
+source_file="res://components/snow/circle-8.png"
+dest_files=[ "res://.import/circle-8.png-6cc112cff598fddf4be3167b53943ada.s3tc.stex", "res://.import/circle-8.png-6cc112cff598fddf4be3167b53943ada.etc.stex" ]
 
 [params]
 

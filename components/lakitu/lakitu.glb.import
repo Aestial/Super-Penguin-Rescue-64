@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/lakitu.glb-622e6501925391f1a66b865a55607dac.scn"
+path="res://.import/lakitu.glb-412a67c58d39f89dec89915ce2f5010e.scn"
 
 [deps]
 
-source_file="res://art/lakitu/lakitu.glb"
-dest_files=[ "res://.import/lakitu.glb-622e6501925391f1a66b865a55607dac.scn" ]
+source_file="res://components/lakitu/lakitu.glb"
+dest_files=[ "res://.import/lakitu.glb-412a67c58d39f89dec89915ce2f5010e.scn" ]
 
 [params]
 

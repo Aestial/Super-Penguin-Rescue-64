@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/penguin.glb-7a58b320589ab7ecbf01e5491eb53b30.scn"
+path="res://.import/penguin.glb-83d3dec00f54bdbab9a55d756c566b79.scn"
 
 [deps]
 
-source_file="res://art/penguin/penguin.glb"
-dest_files=[ "res://.import/penguin.glb-7a58b320589ab7ecbf01e5491eb53b30.scn" ]
+source_file="res://components/penguin/penguin.glb"
+dest_files=[ "res://.import/penguin.glb-83d3dec00f54bdbab9a55d756c566b79.scn" ]
 
 [params]
 

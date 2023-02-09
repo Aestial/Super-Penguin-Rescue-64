@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/Penguin_grp.png-4163a5e09de3968bcd1cf4bc702785fe.s3tc.stex"
-path.etc="res://.import/Penguin_grp.png-4163a5e09de3968bcd1cf4bc702785fe.etc.stex"
+path.s3tc="res://.import/snow_terrain.png-88683211e046365c520e4f09df07cfc2.s3tc.stex"
+path.etc="res://.import/snow_terrain.png-88683211e046365c520e4f09df07cfc2.etc.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://art/penguin/Penguin_grp.png"
-dest_files=[ "res://.import/Penguin_grp.png-4163a5e09de3968bcd1cf4bc702785fe.s3tc.stex", "res://.import/Penguin_grp.png-4163a5e09de3968bcd1cf4bc702785fe.etc.stex" ]
+source_file="res://components/snow/snow_terrain.png"
+dest_files=[ "res://.import/snow_terrain.png-88683211e046365c520e4f09df07cfc2.s3tc.stex", "res://.import/snow_terrain.png-88683211e046365c520e4f09df07cfc2.etc.stex" ]
 
 [params]
 
